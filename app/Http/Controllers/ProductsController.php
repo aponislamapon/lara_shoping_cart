@@ -7,11 +7,11 @@ use App\Product;
 
 class ProductsController extends Controller
 {
-     public function index()
+    public function index()
     {
-        $products = Product::all();
- 
+         $products = Product::all();
         return view('products', compact('products'));
+       
     }
  
     public function cart()
@@ -20,7 +20,7 @@ class ProductsController extends Controller
     }
     public function addToCart($id)
     {
-    	$product = Product::find($id);
+ 		$product = Product::find($id);
  
         if(!$product) {
  
@@ -44,7 +44,7 @@ class ProductsController extends Controller
  
             session()->put('cart', $cart);
  
-            return redirect()->back()->with('success', 'Product added to cart successfully!');
+            return redirect('/cart')->with('success', 'Product added to cart successfully!');
         }
  
         // if cart not empty then check if this product exist then increment quantity
@@ -54,7 +54,7 @@ class ProductsController extends Controller
  
             session()->put('cart', $cart);
  
-            return redirect()->back()->with('success', 'Product added to cart successfully!');
+            return redirect('/cart')->with('success', 'Product added to cart successfully!');
  
         }
  
@@ -68,10 +68,8 @@ class ProductsController extends Controller
  
         session()->put('cart', $cart);
  
-        return redirect()->back()->with('success', 'Product added to cart successfully!');
- 
+        return redirect('/cart')->with('success', 'Product added to cart successfully!');
     }
-
     public function update(Request $request)
     {
         if($request->id and $request->quantity)
@@ -102,5 +100,4 @@ class ProductsController extends Controller
             session()->flash('success', 'Product removed successfully');
         }
     }
-
 }

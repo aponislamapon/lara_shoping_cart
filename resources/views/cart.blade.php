@@ -4,6 +4,10 @@
  
 @section('content')
  
+
+    @if(session('success'))
+        <div class="btn btn-success">{{session('success')}}</div>
+    @endif
     <table id="cart" class="table table-hover table-condensed">
         <thead>
         <tr>

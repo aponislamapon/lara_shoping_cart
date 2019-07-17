@@ -32,9 +32,11 @@
                         </div>
  
                         <?php $total = 0 ?>
+                        @if(session('cart'))
                         @foreach(session('cart') as $id => $details)
                             <?php $total += $details['price'] * $details['quantity'] ?>
                         @endforeach
+                        @endif
  
                         <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
                             <p>Total: <span class="text-info">$ {{ $total }}</span></p>

@@ -11,9 +11,8 @@ class ProductsSeeder extends Seeder
      */
     public function run()
     {
-        
-
-		DB::table('products')->insert([
+ 
+DB::table('products')->insert([
            'name' => 'Samsung Galaxy S9',
            'description' => 'A brand new, sealed Lilac Purple Verizon Global Unlocked Galaxy S9 by Samsung. This is an upgrade. Clean ESN and activation ready.',
            'photo' => 'https://i.ebayimg.com/00/s/ODY0WDgwMA==/z/9S4AAOSwMZRanqb7/$_35.JPG?set_id=89040003C1',
@@ -27,7 +26,13 @@ class ProductsSeeder extends Seeder
             'price' => 983.00
         ]);
  
-        
+        DB::table('products')->insert([
+            'name' => 'Google Pixel 2 XL',
+            'description' => 'New condition
+• No returns, but backed by eBay Money back guarantee',
+            'photo' => 'https://i.ebayimg.com/00/s/MTYwMFg4MzA=/z/G2YAAOSwUJlZ4yQd/$_35.JPG?set_id=89040003C1',
+            'price' => 675.00
+        ]);
  
         DB::table('products')->insert([
             'name' => 'LG V10 H900',
